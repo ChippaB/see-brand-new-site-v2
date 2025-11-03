@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>See Brand New | AI-Powered Business Optimization</title>
+    <meta name="description" content="See Brand New helps small and mid-sized businesses modernize legacy workflows using AI, automation, and custom-built tools.">
+    <link rel="canonical" href="https://seebrandnew.io">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="See Brand New | AI-Powered Business Optimization">
+    <meta property="og:description" content="See Brand New helps small and mid-sized businesses modernize legacy workflows using AI, automation, and custom-built tools.">
+    <meta property="og:url" content="https://seebrandnew.io">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js CDN -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1E4C8F 0%, #6FA6DA 25%, #0F172A 50%, #096EB8 75%, #1E4C8F 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .ai-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(111, 166, 218, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(9, 110, 184, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(30, 76, 143, 0.3) 1px, transparent 1px);
+            background-size: 100px 100px, 150px 150px, 200px 200px;
+            pointer-events: none;
+        }
+        
+        .card-rotate {
+            animation: rotateCards 20s linear infinite;
+        }
+        
+        @keyframes rotateCards {
+            0%, 25% { transform: translateY(0) rotateY(0deg); opacity: 1; }
+            26%, 50% { transform: translateY(-20px) rotateY(5deg); opacity: 0.8; }
+            51%, 75% { transform: translateY(-40px) rotateY(10deg); opacity: 0.6; }
+            76%, 100% { transform: translateY(-60px) rotateY(15deg); opacity: 0.4; }
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 0 30px rgba(111, 166, 218, 0.3);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-scroll {
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-item {
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-50">
+    <!-- Deploy to Cloudflare Pages: root = / -->
+    
+    <!-- ===== Header ===== -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-sm border-b border-slate-800" x-data="{ mobileOpen: false }" aria-label="Primary navigation">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-slate-50 hover:text-cyan-400 transition-colors">See Brand New</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#services" class="px-4 py-2 text-slate-300 hover:text-slate-50 transition-colors">Services</a>
+                    <a href="#contact" class="px-6 py-2 bg-gradient-to-r from-[#096EB8] to-[#1E4C8F] text-white rounded-lg font-medium hover:opacity-90 transition-opacity">AI Audit</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button @click="mobileOpen = !mobileOpen" class="md:hidden text-slate-300 hover:text-slate-50">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="!mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path x-show="mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div x-show="mobileOpen" x-collapse class="md:hidden pb-4 border-t border-slate-800 mt-4">
+                <div class="flex flex-col gap-3 pt-4">
+                    <a href="#services" @click="mobileOpen = false" class="px-4 py-2 text-slate-300 hover:text-slate-50 transition-colors">Services</a>
+                    <a href="#contact" @click="mobileOpen = false" class="px-6 py-2 bg-gradient-to-r from-[#096EB8] to-[#1E4C8F] text-white rounded-lg font-medium hover:opacity-90 transition-opacity text-center">AI Audit</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- ===== Hero ===== -->
+        <section class="relative hero-gradient min-h-screen flex items-center overflow-hidden">
+            <!-- AI Particles Overlay -->
+            <div class="ai-particles"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Content -->
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                            See Brand New — AI-Powered Business Optimization & Creative Solutions
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto lg:mx-0">
+                            Charles W. Brandner | Full Sail Film Grad | AI Puzzle Solver | Websites, Apps, Automation, Generative Media.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#contact" class="px-8 py-3 bg-white text-slate-950 rounded-lg font-semibold hover:bg-slate-100 transition-colors shadow-lg">
+                                Book a Free AI Audit
+                            </a>
+                            <a href="#services" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                                See My AI Toolkit
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Rotating Cards (Desktop Only) -->
+                    <div class="hidden lg:block relative h-[500px]">
+                        <div class="absolute inset-0 flex flex-col gap-4">
+                            <div class="card-rotate bg-slate-900/80 backdrop-blur-sm p-6 rounded-lg border border-slate-700 shadow-xl">
+                                <div class="text-3xl mb-3">🤖</div>
+                                <h3 class="text-xl font-semibold mb-2">AI Automation</h3>
+                                <p class="text-slate-300">Streamline workflows with intelligent automation</p>
+                            </div>
+                            <div class="card-rotate bg-slate-900/80 backdrop-blur-sm p-6 rounded-lg border border-slate-700 shadow-xl" style="animation-delay: 5s;">
+                                <div class="text-3xl mb-3">💻</div>
+                                <h3 class="text-xl font-semibold mb-2">Custom Apps</h3>
+                                <p class="text-slate-300">Build dashboards and portals tailored to your needs</p>
+                            </div>
+                            <div class="card-rotate bg-slate-900/80 backdrop-blur-sm p-6 rounded-lg border border-slate-700 shadow-xl" style="animation-delay: 10s;">
+                                <div class="text-3xl mb-3">🎨</div>
+                                <h3 class="text-xl font-semibold mb-2">Generative Media</h3>
+                                <p class="text-slate-300">AI-powered images, video, and audio production</p>
+                            </div>
+                            <div class="card-rotate bg-slate-900/80 backdrop-blur-sm p-6 rounded-lg border border-slate-700 shadow-xl" style="animation-delay: 15s;">
+                                <div class="text-3xl mb-3">🔄</div>
+                                <h3 class="text-xl font-semibold mb-2">Modernization</h3>
+                                <p class="text-slate-300">Replace legacy systems with scalable AI solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== About Charles ===== -->
+        <section class="py-20 md:py-32 bg-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Charles</h2>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-4">
+                        With a foundation in film production from Full Sail University, Charles brings a unique creative perspective to solving complex business challenges. His journey from film and media production to AI consulting reflects a commitment to understanding problems from multiple angles and finding innovative, practical solutions.
+                    </p>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                        Specializing in warehouse and manufacturing modernization, Charles combines technical expertise with real-world business understanding. He works directly with decision-makers to implement AI-powered solutions that streamline operations, reduce costs, and replace outdated systems with secure, scalable alternatives.
+                    </p>
+                    <div class="inline-block px-4 py-2 bg-cyan-900/30 border border-cyan-700 rounded-full text-cyan-300 text-sm font-medium">
+                        Serving manufacturers, warehouses, and creative teams.
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-cyan-400 mb-2">10+</div>
+                        <div class="text-slate-300">Years Experience</div>
+                    </div>
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-cyan-400 mb-2">50+</div>
+                        <div class="text-slate-300">AI Tools Mastered</div>
+                    </div>
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-cyan-400 mb-2">100%</div>
+                        <div class="text-slate-300">Custom Solutions</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== Services ===== -->
+        <section id="services" class="py-20 md:py-32 bg-slate-950">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What I build</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="service-card bg-slate-900 border border-slate-700 rounded-lg p-8">
+                        <div class="text-4xl mb-4">🤖</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">AI Business Optimization</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Automate workflows and reporting. Transform manual processes into intelligent systems that save time and reduce errors. From data entry to complex reporting, AI handles the repetitive work so your team can focus on what matters.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 2 -->
+                    <div class="service-card bg-slate-900 border border-slate-700 rounded-lg p-8">
+                        <div class="text-4xl mb-4">💻</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Custom Web & App Development</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Dashboards, portals, AI-embedded tools. Build exactly what you need—no templates, no compromises. Every interface is designed for your workflow, with AI capabilities integrated where they make the most impact.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 3 -->
+                    <div class="service-card bg-slate-900 border border-slate-700 rounded-lg p-8">
+                        <div class="text-4xl mb-4">🎨</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Generative Media Studio</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            AI image, video, audio for brands. Produce professional content at scale without the traditional overhead. From product visuals to marketing materials, generative AI creates what you need, when you need it.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 4 -->
+                    <div class="service-card bg-slate-900 border border-slate-700 rounded-lg p-8">
+                        <div class="text-4xl mb-4">🔄</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Legacy System Modernization</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Replace old software with secure, scalable AI. Outdated systems don't just slow you down—they create security risks and limit growth. Modernize with AI-powered solutions that integrate seamlessly and scale with your business.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== Testimonials / Social Proof ===== -->
+        <section class="py-20 md:py-32 bg-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Results from real businesses</h2>
+                
+                <div class="testimonial-scroll flex md:grid md:grid-cols-2 gap-6 overflow-x-auto pb-4 md:pb-0">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-item flex-shrink-0 md:flex-shrink bg-slate-800 border border-slate-700 rounded-lg p-8 min-w-[300px] md:min-w-0">
+                        <div class="text-yellow-400 text-2xl mb-4">"</div>
+                        <p class="text-lg text-slate-200 mb-4 italic">
+                            "Charles turned our manual reporting into a 3-second dashboard."
+                        </p>
+                        <p class="text-slate-400">— Operations Director</p>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-item flex-shrink-0 md:flex-shrink bg-slate-800 border border-slate-700 rounded-lg p-8 min-w-[300px] md:min-w-0">
+                        <div class="text-yellow-400 text-2xl mb-4">"</div>
+                        <p class="text-lg text-slate-200 mb-4 italic">
+                            "We finally have an AI workflow that staff can actually use."
+                        </p>
+                        <p class="text-slate-400">— Shop Manager</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== Contact / CTA ===== -->
+        <section id="contact" class="py-20 md:py-32 bg-slate-950">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Let's modernize your workflow.</h2>
+                
+                <div class="bg-slate-900 border border-slate-700 rounded-lg p-8 md:p-12">
+                    <!-- Connect to Formspree or EmailJS in production -->
+                    <form x-data="{ submitted: false }" @submit.prevent="submitted = true" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-50 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-50 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-colors">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="challenge" class="block text-sm font-medium text-slate-300 mb-2">Business challenge</label>
+                            <textarea id="challenge" name="challenge" rows="4" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-50 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-slate-300 mb-2">Service interest</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-50 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-colors">
+                                <option value="automation">Automation</option>
+                                <option value="website-app">Website/App</option>
+                                <option value="generative-media">Generative Media</option>
+                                <option value="legacy-upgrade">Legacy Upgrade</option>
+                            </select>
+                        </div>
+                        
+                        <div x-show="submitted" x-collapse class="bg-green-900/30 border border-green-700 text-green-300 px-4 py-3 rounded-lg">
+                            <p>Thank you for your message. We'll be in touch soon.</p>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-[#096EB8] to-[#1E4C8F] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg">
+                            Send request
+                        </button>
+                    </form>
+                    
+                    <div class="mt-8 pt-8 border-t border-slate-700 text-center">
+                        <p class="text-slate-400">
+                            Connect on LinkedIn: <a href="https://www.linkedin.com/in/charles-brandner/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 transition-colors">https://www.linkedin.com/in/charles-brandner/</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ===== Footer ===== -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-slate-400">
+                <p>© 2025 See Brand New. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

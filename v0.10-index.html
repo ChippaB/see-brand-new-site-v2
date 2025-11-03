@@ -1,0 +1,445 @@
+<!-- Deploy to Cloudflare Pages. Root directory = /. Domain: seebrandnew.io -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>See Brand New | AI-Powered Business Optimization</title>
+    <meta name="description" content="See Brand New helps small and mid-sized businesses modernize legacy workflows using AI, automation, and custom-built tools.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0F172A">
+    <link rel="canonical" href="https://seebrandnew.io">
+    <!-- Logo: Favicon -->
+    <link rel="icon" href="/assets/favicon.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="See Brand New | AI-Powered Business Optimization">
+    <meta property="og:description" content="See Brand New helps small and mid-sized businesses modernize legacy workflows using AI, automation, and custom-built tools.">
+    <meta property="og:url" content="https://seebrandnew.io">
+    <meta property="og:type" content="website">
+    <!-- Logo: Open Graph image -->
+    <meta property="og:image" content="/assets/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js CDN -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        :root {
+            /* See Brand New Brand Colors */
+            --sbn-deep-blue: #1E4C8F;
+            --sbn-cyan: #6FA6DA;
+            --sbn-azure: #096EB8;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--sbn-deep-blue) 0%, var(--sbn-cyan) 25%, #0F172A 50%, var(--sbn-azure) 75%, var(--sbn-deep-blue) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .ai-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(111, 166, 218, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(9, 110, 184, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(30, 76, 143, 0.3) 1px, transparent 1px);
+            background-size: 100px 100px, 150px 150px, 200px 200px;
+            pointer-events: none;
+        }
+        
+        .card-rotate {
+            animation: rotateCards 20s linear infinite;
+        }
+        
+        @keyframes rotateCards {
+            0%, 25% { transform: translateY(0) rotateY(0deg); opacity: 1; }
+            26%, 50% { transform: translateY(-20px) rotateY(5deg); opacity: 0.8; }
+            51%, 75% { transform: translateY(-40px) rotateY(10deg); opacity: 0.6; }
+            76%, 100% { transform: translateY(-60px) rotateY(15deg); opacity: 0.4; }
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 0 30px rgba(111, 166, 218, 0.3);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-scroll {
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-item {
+            scroll-snap-align: start;
+        }
+        
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-50">
+    
+    <!-- ===== Header ===== -->
+    <header class="sticky top-0 z-50 transition-all duration-300" 
+            :class="scrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 shadow-lg shadow-slate-900/20' : 'bg-transparent'"
+            x-data="{ mobileOpen: false, scrolled: false }"
+            @scroll.window="scrolled = window.scrollY > 40"
+            x-init="scrolled = window.scrollY > 40"
+            aria-label="Primary navigation">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo: Minimal icon logo for navbar (32px height) -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="hover:opacity-80 transition-opacity">
+                        <img src="/assets/logo_icon.svg" alt="See Brand New logo" class="h-8 w-auto" style="height: 32px;">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#services" class="nav-link px-4 py-2 text-slate-300 hover:text-slate-50 transition-colors">Services</a>
+                    <a href="#contact" class="px-6 py-2 bg-gradient-to-r from-[var(--sbn-azure)] to-[var(--sbn-deep-blue)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity">Request a Free Consultation</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button @click="mobileOpen = !mobileOpen" class="md:hidden text-slate-300 hover:text-slate-50" aria-label="Toggle mobile menu">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path x-show="!mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path x-show="mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div x-show="mobileOpen" x-collapse class="md:hidden pb-4 border-t border-slate-800 mt-4">
+                <div class="flex flex-col gap-3 pt-4">
+                    <a href="#services" @click="mobileOpen = false" class="px-4 py-2 text-slate-300 hover:text-slate-50 transition-colors">Services</a>
+                    <a href="#contact" @click="mobileOpen = false" class="px-6 py-2 bg-gradient-to-r from-[var(--sbn-azure)] to-[var(--sbn-deep-blue)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity text-center">Request a Free Consultation</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- ===== Hero ===== -->
+        <section class="relative hero-gradient min-h-screen flex items-center overflow-hidden">
+            <!-- AI Particles Overlay -->
+            <div class="ai-particles" aria-hidden="true"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Content -->
+                    <div class="text-center lg:text-left fade-up">
+                        <!-- Logo: Full logo (AI-gear eye) in hero (300px width) -->
+                        <div class="mb-8 flex justify-center lg:justify-start">
+                            <img src="/assets/logo_full.svg" alt="See Brand New logo" class="w-[300px] h-auto">
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                            See Brand New — AI-Powered Business Optimization & Creative Solutions
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto lg:mx-0">
+                            A team of engineers and designers building next-generation AI systems for modern operations.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#contact" class="px-8 py-3 bg-white text-slate-950 rounded-lg font-semibold hover:bg-slate-100 hover:shadow-[0_0_12px_#6FA6DA]/50 transition-all shadow-lg" aria-label="Request a Free Consultation">
+                                Request a Free Consultation
+                            </a>
+                            <a href="#services" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 hover:shadow-[0_0_12px_#6FA6DA]/50 transition-all">
+                                Explore Our Solutions
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Dashboard Mockup Placeholder -->
+                    <div class="hidden lg:block relative">
+                        <div class="rounded-xl bg-slate-900/60 border border-slate-700 h-[400px] flex items-center justify-center text-slate-400 text-sm">
+                            [dashboard mockup here]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== About See Brand New ===== -->
+        <section class="py-20 md:py-32 bg-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About See Brand New</h2>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-4">
+                        We are a team of engineers and designers specializing in AI-powered business optimization. Our approach combines technical expertise with real-world business understanding to deliver solutions that transform operations and drive measurable results.
+                    </p>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                        Specializing in warehouse and manufacturing modernization, we work directly with decision-makers to implement AI-powered solutions that streamline operations, reduce costs, and replace outdated systems with secure, scalable alternatives.
+                    </p>
+                    <div class="inline-block px-4 py-2 bg-cyan-900/30 border border-cyan-700 rounded-full text-cyan-300 text-sm font-medium">
+                        Serving manufacturers, warehouses, and creative teams.
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6 text-center fade-up">
+                        <div class="text-4xl font-bold text-cyan-400 mb-2">10+</div>
+                        <div class="text-slate-300">Years Experience</div>
+                    </div>
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6 text-center fade-up">
+                        <div class="text-4xl font-bold text-cyan-400 mb-2">50+</div>
+                        <div class="text-slate-300">AI Tools Mastered</div>
+                    </div>
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6 text-center fade-up">
+                        <div class="text-4xl font-bold text-cyan-400 mb-2">100%</div>
+                        <div class="text-slate-300">Custom Solutions</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== Services ===== -->
+        <section id="services" class="py-20 md:py-32 bg-slate-950">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-up">Our Solutions</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="service-card bg-slate-900 border border-slate-700 rounded-lg p-8 fade-up">
+                        <div class="mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">AI Business Optimization</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Automate workflows and reporting. Transform manual processes into intelligent systems that save time and reduce errors. From data entry to complex reporting, AI handles the repetitive work so your team can focus on what matters.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 2 -->
+                    <div class="service-card bg-slate-900 border border-slate-700 rounded-lg p-8 fade-up">
+                        <div class="mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Custom Web & App Development</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Dashboards, portals, AI-embedded tools. Build exactly what you need—no templates, no compromises. Every interface is designed for your workflow, with AI capabilities integrated where they make the most impact.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 3 -->
+                    <div class="service-card bg-slate-900 border border-slate-700 rounded-lg p-8 fade-up">
+                        <div class="mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Generative Media Studio</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            AI image, video, audio for brands. Produce professional content at scale without the traditional overhead. From product visuals to marketing materials, generative AI creates what you need, when you need it.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 4 -->
+                    <div class="service-card bg-slate-900 border border-slate-700 rounded-lg p-8 fade-up">
+                        <div class="mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Legacy System Modernization</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Replace old software with secure, scalable AI. Outdated systems don't just slow you down—they create security risks and limit growth. Modernize with AI-powered solutions that integrate seamlessly and scale with your business.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== Testimonials / Social Proof ===== -->
+        <section class="py-20 md:py-32 bg-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-up">Results from real businesses</h2>
+                
+                <div class="testimonial-scroll flex md:grid md:grid-cols-2 gap-6 overflow-x-auto pb-4 md:pb-0">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-item flex-shrink-0 md:flex-shrink bg-slate-800 border border-slate-700 rounded-lg p-8 min-w-[300px] md:min-w-0 fade-up">
+                        <div class="text-yellow-400 text-2xl mb-4" aria-hidden="true">"</div>
+                        <p class="text-lg text-slate-200 mb-4 italic">
+                            "Charles turned our manual reporting into a 3-second dashboard."
+                        </p>
+                        <p class="text-slate-400">— Operations Director</p>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-item flex-shrink-0 md:flex-shrink bg-slate-800 border border-slate-700 rounded-lg p-8 min-w-[300px] md:min-w-0 fade-up">
+                        <div class="text-yellow-400 text-2xl mb-4" aria-hidden="true">"</div>
+                        <p class="text-lg text-slate-200 mb-4 italic">
+                            "We finally have an AI workflow that staff can actually use."
+                        </p>
+                        <p class="text-slate-400">— Shop Manager</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== Contact / CTA ===== -->
+        <section id="contact" class="py-20 md:py-32 bg-slate-950">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-up">Let's modernize your workflow.</h2>
+                
+                <div class="bg-slate-900 border border-slate-700 rounded-lg p-8 md:p-12 fade-up">
+                    <!-- Connect to Formspree or EmailJS in production -->
+                    <form method="POST" action="https://formspree.io/f/your-form-id" x-data="{ submitted: false }" @submit.prevent="submitted = true" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-50 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-50 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-colors">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="challenge" class="block text-sm font-medium text-slate-300 mb-2">Business challenge</label>
+                            <textarea id="challenge" name="challenge" rows="4" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-50 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-slate-300 mb-2">Service interest</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-50 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-colors">
+                                <option value="automation">Automation</option>
+                                <option value="website-app">Website/App</option>
+                                <option value="generative-media">Generative Media</option>
+                                <option value="legacy-upgrade">Legacy Upgrade</option>
+                            </select>
+                        </div>
+                        
+                        <div x-show="submitted" x-collapse class="bg-green-900/30 border border-green-700 text-green-300 px-4 py-3 rounded-lg">
+                            <p>Thank you for your message. We'll be in touch soon.</p>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-[var(--sbn-azure)] to-[var(--sbn-deep-blue)] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 hover:shadow-[0_0_12px_#6FA6DA]/50 transition-all shadow-lg">
+                            Send request
+                        </button>
+                    </form>
+                    
+                    <div class="mt-8 pt-8 border-t border-slate-700 text-center">
+                        <p class="text-slate-400">
+                            Connect on LinkedIn: <a href="https://www.linkedin.com/in/charles-brandner/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 transition-colors">https://www.linkedin.com/in/charles-brandner/</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ===== Footer ===== -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4">
+                <!-- Logo: Text logo in footer (180px width) -->
+                <div class="flex justify-center mb-4">
+                    <img src="/assets/logo_text.svg" alt="See Brand New logo" class="w-[180px] h-auto">
+                </div>
+                <p class="text-slate-400">© 2025 See Brand New. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Fade-up on scroll using IntersectionObserver
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
