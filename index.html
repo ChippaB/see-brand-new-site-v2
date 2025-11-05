@@ -2,133 +2,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>See Brand New | AI-Powered Business Optimization</title>
-    <meta name="description" content="See Brand New helps small and mid-sized businesses modernize legacy workflows using AI, automation, and custom-built tools.">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0F172A">
-    <link rel="canonical" href="https://seebrandnew.io">
-    <!-- Logo: Favicon -->
-    <link rel="icon" href="/assets/favicon.ico">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="See Brand New | AI-Powered Business Optimization">
-    <meta property="og:description" content="See Brand New helps small and mid-sized businesses modernize legacy workflows using AI, automation, and custom-built tools.">
-    <meta property="og:url" content="https://seebrandnew.io">
-    <meta property="og:type" content="website">
-    <!-- Logo: Open Graph image -->
-    <meta property="og:image" content="/assets/og-image.png">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Alpine.js CDN -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <style>
-        :root {
-            /* See Brand New Brand Colors */
-            --sbn-deep-blue: #1E4C8F;
-            --sbn-cyan: #6FA6DA;
-            --sbn-azure: #096EB8;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--sbn-deep-blue) 0%, var(--sbn-cyan) 25%, #0F172A 50%, var(--sbn-azure) 75%, var(--sbn-deep-blue) 100%);
-            background-size: 200% 200%;
-            animation: gradientShift 15s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        .ai-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.1;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(111, 166, 218, 0.3) 1px, transparent 1px),
-                radial-gradient(circle at 80% 70%, rgba(9, 110, 184, 0.3) 1px, transparent 1px),
-                radial-gradient(circle at 50% 50%, rgba(30, 76, 143, 0.3) 1px, transparent 1px);
-            background-size: 100px 100px, 150px 150px, 200px 200px;
-            pointer-events: none;
-        }
-        
-        .card-rotate {
-            animation: rotateCards 20s linear infinite;
-        }
-        
-        @keyframes rotateCards {
-            0%, 25% { transform: translateY(0) rotateY(0deg); opacity: 1; }
-            26%, 50% { transform: translateY(-20px) rotateY(5deg); opacity: 0.8; }
-            51%, 75% { transform: translateY(-40px) rotateY(10deg); opacity: 0.6; }
-            76%, 100% { transform: translateY(-60px) rotateY(15deg); opacity: 0.4; }
-        }
-        
-        .service-card:hover {
-            box-shadow: 0 0 30px rgba(111, 166, 218, 0.3);
-            transform: translateY(-4px);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-scroll {
-            scroll-snap-type: x mandatory;
-        }
-        
-        .testimonial-item {
-            scroll-snap-align: start;
-        }
-        
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: currentColor;
-            transition: width 0.3s ease, left 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-            left: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>See Brand New | AI-Powered Business Optimization</title>
+  <meta name="description" content="See Brand New builds modern AI-driven tools and automation systems that optimize operations for today’s businesses.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0F172A">
+  <link rel="canonical" href="https://seebrandnew.io">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/assets/logo_full.svg" as="image">
+  <link rel="preload" href="/assets/logo_icon.svg" as="image">
+
+  <link rel="icon" href="/assets/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="See Brand New | AI-Powered Business Optimization">
+  <meta property="og:description" content="AI solutions that streamline workflows, automate reporting, and modernize legacy systems.">
+  <meta property="og:url" content="https://seebrandnew.io">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    :root {
+      --sbn-deep-blue: #1E4C8F;
+      --sbn-cyan: #6FA6DA;
+      --sbn-azure: #096EB8;
+    }
+
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, var(--sbn-deep-blue) 0%, var(--sbn-cyan) 25%, #0F172A 50%, var(--sbn-azure) 75%, var(--sbn-deep-blue) 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+
+    .ai-particles { position:absolute; inset:0; opacity:0.1; pointer-events:none;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(111,166,218,0.3) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba(9,110,184,0.3) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(30,76,143,0.3) 1px, transparent 1px);
+      background-size:100px 100px,150px 150px,200px 200px;
+    }
+
+    .fade-up { opacity:0; transform:translateY(30px); transition:opacity .6s ease-out, transform .6s ease-out; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
+
+    .service-card:hover { box-shadow:0 0 30px rgba(111,166,218,.3); transform:translateY(-4px); transition:all .3s ease; }
+
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:0; left:50%; width:0; height:2px; background:currentColor; transition:width .3s ease,left .3s ease; }
+    .nav-link:hover::after { width:100%; left:0; }
+  </style>
 </head>
 <body class="bg-slate-950 text-slate-50">
     
@@ -191,7 +129,7 @@
                             See Brand New — AI-Powered Business Optimization & Creative Solutions
                         </h1>
                         <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto lg:mx-0">
-                            A team of engineers and designers building next-generation AI systems for modern operations.
+                            Developing next-generation AI systems for modern operations and business automation.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <a href="#contact" class="px-8 py-3 bg-white text-slate-950 rounded-lg font-semibold hover:bg-slate-100 hover:shadow-[0_0_12px_#6FA6DA]/50 transition-all shadow-lg" aria-label="Request a Free Consultation">
@@ -203,12 +141,14 @@
                         </div>
                     </div>
                     
-                    <!-- Right: Dashboard Mockup Placeholder -->
-                    <div class="hidden lg:block relative">
-                        <div class="rounded-xl bg-slate-900/60 border border-slate-700 h-[400px] flex items-center justify-center text-slate-400 text-sm">
-                            [dashboard mockup here]
-                        </div>
+                    <!-- Right: Temporary static placeholder -->
+                    <div class="hidden lg:block relative fade-up">
+                    <img src="/assets/dashboard-preview-placeholder.png"
+                        alt="AI dashboard preview placeholder"
+                        loading="lazy"
+                        class="rounded-xl border border-slate-700 shadow-lg w-full h-auto max-h-[420px] object-contain">
                     </div>
+
                 </div>
             </div>
         </section>
@@ -219,10 +159,10 @@
                 <div class="text-center mb-12 fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">About See Brand New</h2>
                     <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-4">
-                        We are a team of engineers and designers specializing in AI-powered business optimization. Our approach combines technical expertise with real-world business understanding to deliver solutions that transform operations and drive measurable results.
+                        See Brand New specializes in AI-powered business optimization. Combining technical precision with creative design, every project is built to deliver measurable results.
                     </p>
                     <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-                        Specializing in warehouse and manufacturing modernization, we work directly with decision-makers to implement AI-powered solutions that streamline operations, reduce costs, and replace outdated systems with secure, scalable alternatives.
+                        Focused on warehouse and manufacturing modernization, See Brand New collaborates directly with business decision-makers to implement AI solutions that streamline operations, reduce costs, and modernize legacy systems.
                     </p>
                     <div class="inline-block px-4 py-2 bg-cyan-900/30 border border-cyan-700 rounded-full text-cyan-300 text-sm font-medium">
                         Serving manufacturers, warehouses, and creative teams.
@@ -407,39 +347,41 @@
             </div>
         </div>
     </footer>
-    
-    <!-- Smooth Scroll Script -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Fade-up on scroll using IntersectionObserver
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.fade-up').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+
+<!-- Smooth Scroll + Fade + Lazyload -->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Fade-up observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-up').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.15}s`;
+  observer.observe(el);
+});
+
+// Lazyload images
+document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+  const obs = new IntersectionObserver((entries, o) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        img.src = img.dataset.src || img.src;
+        o.disconnect();
+      }
+    });
+  });
+  obs.observe(img);
+});
+</script>  
 </body>
 </html>
